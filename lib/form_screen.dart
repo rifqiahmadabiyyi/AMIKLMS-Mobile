@@ -1,3 +1,4 @@
+import 'package:amklms/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget{
@@ -71,18 +72,26 @@ class _FormScreenState extends State<FormScreen>{
                     passController.clear();
                   }
                 },
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Color(0x4C80E5fff),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Center(
-                    child: Text("Log In", style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DashboardView()),
+                  );
+                  },
+                  child: Container(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Color(0x4C80E5fff),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Center(
+                      child: Text("Log In", style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                    ),
                   ),
                 ),
               ),
@@ -96,7 +105,12 @@ class _FormScreenState extends State<FormScreen>{
                    ),
                    ),
                    TextButton(
-                    onPressed: (){}, 
+                    onPressed: (){
+                      Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DashboardView()),
+                  );
+                    }, 
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
